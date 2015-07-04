@@ -24,3 +24,21 @@ git rebase -i HEAD^^^
 * edit - stops at this change
 * reword - lets you change the commit message
 * squash - combines this change with its parent
+
+#Stash
+Stash allows you to store changed files in a temporary area.  This can be used to transfer files from branches.
+
+* ```git stash save``` Git stash saves all of your files on the stack
+  * ```[--include-untracked]``` saves untracked changes too
+  * ```[--keep-index]``` saves only unstaged changes
+* ```git stash list``` Will list all of your stashs 
+  * ```[--stat]```
+* ```git stash apply``` Will unstash and retrieve your last stashed files
+* ```git stash apply stash@{<num>}``` Allows you to choose which stash to apply
+* ```git stash drop``` Allows you to drop the last stashed item
+* ```git stash drop stash@{<num>}``` Allows you to pick an stashed item to drop
+* ```git stash pop``` Combines apply and drop
+* ```git stash show``` Shows details of the most recent stash
+* ```git stash show stash@{<num>}``` Shows the stash chosen
+* ```git stash branch <name> stash@{<num>}``` creates a new branch and unstashs
+* ```git stash clear``` kills all your stash
