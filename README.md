@@ -42,3 +42,11 @@ Stash allows you to store changed files in a temporary area.  This can be used t
 * ```git stash show stash@{<num>}``` Shows the stash chosen
 * ```git stash branch <name> stash@{<num>}``` creates a new branch and unstashs
 * ```git stash clear``` kills all your stash
+
+
+#Removing history
+```git filter-branch --tree-filter <command>```
+
+e.g
+1. ```git filter-branch --tree-filter 'rm -f password.txt' -- --all``` Will go through and remove and password.txt files in your commits, (-- --all will run this in all commits on all of our branches, we could change --all to HEAD) 
+2. ```git filter-branch --tree-filter 'find . -name ".*mp4" exec rm {}\;'``` Remove all files related to mp4
