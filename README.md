@@ -48,5 +48,8 @@ Stash allows you to store changed files in a temporary area.  This can be used t
 ```git filter-branch --tree-filter <command>```
 
 e.g
+
 1. ```git filter-branch --tree-filter 'rm -f password.txt' -- --all``` Will go through and remove and password.txt files in your commits, (-- --all will run this in all commits on all of our branches, we could change --all to HEAD) 
-2. ```git filter-branch --tree-filter 'find . -name ".*mp4" exec rm {}\;'``` Remove all files related to mp4
+2. ```git filter-branch --index-filter 'git rm --cached --ignore-unmatch password.txt'``` Same effect as above
+3. ```git filter-branch --tree-filter 'find . -name ".*mp4" exec rm {}\;'``` Remove all files related to mp4
+4. ```git filter-branch --prune-empty -- --all``` Removes any commits that might be an empty commit
