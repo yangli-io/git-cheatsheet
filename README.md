@@ -1,6 +1,10 @@
 # git-cheatsheet
 A cheatsheet for git
 
+#Config
+* ```git config --global core.autocrlf input``` activate this on linux/osx to change any windows CRLF into LF
+* ```git config --global core.autocrlf true``` use this on windows to change CRLF to LF when committing
+
 #Rebase
 Rebase allows you to combine your commits together
 
