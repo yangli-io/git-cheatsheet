@@ -62,7 +62,7 @@ e.g
 
 ###Cherry picking multiple commits
 
-```git cherry-pick --no-commits <hash> <hash> ...```
+```git cherry-pick --no-commit <hash> <hash> ...```
 
 ###Cherry pick author
 Because Cherry Picking retains the original author, you might want to add the Cherry picker as an additional author by using the -x option
