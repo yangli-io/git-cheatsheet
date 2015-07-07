@@ -47,6 +47,27 @@ Stash allows you to store changed files in a temporary area.  This can be used t
 * ```git stash branch <name> stash@{<num>}``` creates a new branch and unstashs
 * ```git stash clear``` kills all your stash
 
+#Cherry Pick
+cherry picking lets you pick out specific commits from various branches to use.
+
+```git cherry-pick <hash>```
+
+e.g
+
+```git cherry-pick 3532e12```
+
+###Changing your commit message
+
+```git cherry-pick --edit <hash>```
+
+###Cherry picking multiple commits
+
+```git cherry-pick --no-commits <hash> <hash> ...```
+
+###Cherry pick author
+Because Cherry Picking retains the original author, you might want to add the Cherry picker as an additional author by using the -x option
+
+```git cherry-pick -signoff <hash>```
 
 #Removing history
 ```git filter-branch --tree-filter <command>```
