@@ -78,3 +78,13 @@ e.g
 2. ```git filter-branch --index-filter 'git rm --cached --ignore-unmatch password.txt'``` Same effect as above
 3. ```git filter-branch --tree-filter 'find . -name ".*mp4" exec rm {}\;'``` Remove all files related to mp4
 4. ```git filter-branch --prune-empty -- --all``` Removes any commits that might be an empty commit
+
+#Reflog  (pronounced ref-log)
+
+Reflog allows you to unreset commits, in essence it's a secret repository of the commits you thought you deleted.
+
+```git reflog``` this command will list all of your commits and resets in order
+
+To get back your changes use ```git reset --hard <sha>``` instead of the ```<sha>``` you could use ```HEAD@{<num>}```
+
+```git log --walk-reflogs``` For a more verbose version of reflog
