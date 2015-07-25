@@ -2,9 +2,56 @@
 A cheatsheet for git
 
 #Config
+* ```git config --list``` List the current configs
 * ```git config --global color.ui true``` set this to see colours in git shell messages
+* ```git config --global user.name "Yang Li"``` Sets up name of the git user
+* ```git config --global user.email "yangli1990@live.com.au"``` Sets up the email of the git user
+* ```git config --global core.editor subl``` Configure your git editor (You will need this for interactive rebase)
+* ```git config --global merge.tool opendiff``` Configure your merge tool
 * ```git config --global core.autocrlf input``` activate this on linux/osx to change any windows CRLF into LF
 * ```git config --global core.autocrlf true``` use this on windows to change CRLF to LF when committing
+* ```git config user.email "bob@live.com.au"``` Will override your global config settings, check by using ```git config user.email```
+* ```git config --global alias.mylog "log --oneline"``` Creates an alias command that can be called by ```git mylog```
+
+#Log
+Log will show you a chronological order of all of your commits.  Hit the 'q' key to get out of log
+```
+git log
+```
+
+Here are some ways to customize your git log messages
+* ```git log --oneline``` Shorten the log messages so it becomes one line per commit
+* ```git log --pretty=format: "%h %ad- %s [%an]"``` Form your output the way you want it by using these placeholders
+  * %ad - date
+  * %an - name of author
+  * %h - SHA Hash, or commit id
+  * %s - message
+  * %r - ref names
+* ```git log --oneline --p``` Will show you one line and the changes in that commit
+* ```git log --oneline --stat``` Will show how many incertions/deletions were made per line
+* ```git log --oneline --graph``` Will show you a visualisation of the branches and commits
+* ```git log --until=1.minute.ago``` Shows commits before 1 minute ago
+* ```git log --since=1.day.ago``` Shows commits starting from a day ago
+* ```git log --since=2001-12-20 --until=5.weeks.ago``` Shows commits between 2001-12-20 to 5 weeks ago
+
+#diff
+```git diff``` will show you the last commit
+```git diff test/index.html``` specify the file
+```git diff HEAD~3``` The 3rd diffs
+```git diff HEAD~3..HEAD~2``` Compare the 3rd most recent commit to the 2nd most recent commit
+```git diff <sha1>..<sha2>``` Compare commits based on their commit id
+```git diff master branch-dev``` Compare master branch with the branch-dev branch
+
+#blame
+```git blame index.html``` gets a list of who made what changes
+
+#.gitignore
+* You can add a list of files to be excluded in a .gitignore file
+```
+node_modules/ //ignores all node_modules files
+*.log //ignores all log files
+```
+* You can also ignore files personally by adding them to the .git/info/exclude file
 
 #Rebase
 Rebase allows you to combine your commits together
