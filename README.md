@@ -27,7 +27,7 @@ Here are some ways to customize your git log messages
   * %h - SHA Hash, or commit id
   * %s - message
   * %r - ref names
-* ```git log --oneline --p``` Will show you one line and the changes in that commit
+* ```git log --oneline -p``` Will show you one line and the changes in that commit
 * ```git log --oneline --stat``` Will show how many incertions/deletions were made per line
 * ```git log --oneline --graph``` Will show you a visualisation of the branches and commits
 * ```git log --until=1.minute.ago``` Shows commits before 1 minute ago
